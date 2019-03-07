@@ -37,7 +37,7 @@ namespace MvcHybrid
                     options.RequireHttpsMetadata = false;
 
                     options.ClientSecret = "secret";
-                    options.ClientId = "mvc.hybrid";
+                    options.ClientId = "Pluto.Web";
 
                     options.ResponseType = "code id_token";
 
@@ -45,20 +45,19 @@ namespace MvcHybrid
                     options.Scope.Add("openid");
                     options.Scope.Add("profile");
                     options.Scope.Add("email");
-                    options.Scope.Add("api1");
-                    options.Scope.Add("offline_access");
+                    //options.Scope.Add("offline_access");
 
                     options.ClaimActions.Remove("amr");
                     options.ClaimActions.MapJsonKey("website", "website");
 
-                    options.GetClaimsFromUserInfoEndpoint = true;
+                    options.GetClaimsFromUserInfoEndpoint = false;
                     options.SaveTokens = true;
 
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        NameClaimType = JwtClaimTypes.Name,
-                        RoleClaimType = JwtClaimTypes.Role,
-                    };
+                    //options.TokenValidationParameters = new TokenValidationParameters
+                    //{
+                    //    NameClaimType = JwtClaimTypes.Name,
+                    //    RoleClaimType = JwtClaimTypes.Role,
+                    //};
                 });
         }
 
