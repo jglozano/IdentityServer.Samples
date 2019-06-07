@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Net.Http;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+using Clients;
+using IdentityModel.Client;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
-using System.Net.Http;
-using Clients;
-using Newtonsoft.Json.Linq;
-using IdentityModel.Client;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
-using System.Globalization;
-using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json.Linq;
 
-namespace MvcHybrid.Controllers
+namespace Agent.Controllers
 {
     public class HomeController : Controller
     {

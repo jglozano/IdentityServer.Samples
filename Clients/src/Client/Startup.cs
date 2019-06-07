@@ -1,14 +1,12 @@
 ﻿using System;
+using System.IdentityModel.Tokens.Jwt;
+using Clients;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using System.IdentityModel.Tokens.Jwt;
-using IdentityModel;
-using Clients;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication;
 
-namespace MvcHybrid
+namespace Client
 {
     public class Startup
     {
@@ -36,8 +34,8 @@ namespace MvcHybrid
                     options.Authority = Constants.Authority;
                     options.RequireHttpsMetadata = false;
 
-                    options.ClientSecret = "secret";
-                    options.ClientId = "Pluto.Web";
+                    //options.ClientSecret = "secret";
+                    options.ClientId = "Client1";
 
                     options.ResponseType = "code id_token";
 
